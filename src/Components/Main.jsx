@@ -6,7 +6,12 @@ const Main = () => {
     const [equation, setEquation] = useState([]);
 
     const userInput = (value) => {
-        setEquation(prev => [...prev, value]);
+        setEquation(prev => {
+            if (value === 'C') return '';
+            if (value === 'Del') return prev.slice(0, -1);
+            return [...prev, value];
+        });
+        console.log(equation);
         setInputValue(prev => {
             if (value === 'C') return '';
             if (value === 'Del') return prev.slice(0, -1);

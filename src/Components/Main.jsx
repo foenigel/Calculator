@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { evaluate } from "mathjs";
+import { BsBatteryHalf, BsWifi, BsReception4 } from "react-icons/bs";
 
 const Main = () => {
     const [inputValue, setInputValue] = useState('');
@@ -34,44 +35,51 @@ const Main = () => {
         });
     };
     
-    return ( <div className="relative px-0 bg-black w-full min-h-screen sm:px-44 flex flex-col items-center justify-center">
-                <div className="relative flex flex-col flex-1 px-5 py-6 items-center justify-center w-full sm:py-10 sm:max-w-[400px]">
+    return ( <div className="relative bg-white w-full h-full flex flex-col items-center justify-center">
+            <div className="relative my-6 bg-gray-800 shadow-2xl shadow-black/50 rounded-3xl overflow-hidden w-full max-w-[450px] h-full flex flex-col items-center justify-center border-4 border-white">
+                <div className="bg-black/15 w-full h-[20px] flex items-center justify-end gap-2 p-5">
+                    <BsReception4 size={19} color="#FFFFFF"/>
+                    <BsWifi size={21} color="#FFFFFF"/>
+                    <BsBatteryHalf size={22} color="#FFFFFF"/>
+                </div>
+                <div className="bg-gray-800 h-1/3 rounded-tl-2xl rounded-tr-2xl relative flex flex-col px-5 py-20 items-center justify-center w-full sm:py-10 ">
                         <h4 className="text-sky-400 text-xs absolute mb-16 right-4 sm:mb-10">{equation}</h4>
                         <h1 className="flex text-white text-5xl font-semibold absolute right-4 sm:-mb-6">{inputValue}</h1>
                 </div>
-                <div className="relative flex-1 w-full min-h-[auto] bg-zinc-900 px-8 py-16 sm:p-4">
+                <div className="relative h-2/3 w-full bg-gray-800/90 rounded-bl-2xl rounded-br-2xl py-8 px-9">
                     <div className="relative text-base xl:gap-4 xl:text-2xl">
                         <div className="relative">
                         <div className="grid grid-cols-4 gap-x-2 mb-4 grid-rows-1 sm:mb-2">
-                        <button className="w-auto h-auto rounded-lg p-2 bg-violet-500 text-white text-2xl sm:text-xl" onClick={() => userInput('C')}>C</button>
-                        <button className="w-auto h-auto rounded-lg  bg-violet-500 text-white text-2xl sm:text-xl" onClick={() => userInput('.')}>.</button>
-                        <button className="w-auto h-auto rounded-lg  bg-violet-500 text-white text-2xl sm:text-xl" onClick={() => userInput('%')}>%</button>
-                        <button className="w-auto h-auto rounded-lg  bg-violet-500 text-white text-2xl sm:text-xl" onClick={() => userInput('Del')}>Del</button>
+                        <button className="w-auto h-auto rounded-lg p-2 bg-whiteShade text-black text-2xl sm:text-xl" onClick={() => userInput('C')}>C</button>
+                        <button className="w-auto h-auto rounded-lg  bg-whiteShade text-black text-2xl sm:text-xl" onClick={() => userInput('.')}>.</button>
+                        <button className="w-auto h-auto rounded-lg  bg-whiteShade text-black text-2xl sm:text-xl" onClick={() => userInput('%')}>%</button>
+                        <button className="w-auto h-auto rounded-lg  bg-whiteShade text-black text-2xl sm:text-xl" onClick={() => userInput('Del')}>Del</button>
                         </div>
                         <div className="flex gap-x-2">
                         <div className="grid grid-cols-3 gap-x-2 gap-y-4 grid-rows-4 w-3/4 sm:gap-y-2">
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('7')}>7</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('8')}>8</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('9')}>9</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('4')}>4</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('5')}>5</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('6')}>6</button>
-                        <button className="w-auto h-auto p-2 rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('1')}>1</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('2')}>2</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('3')}>3</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl sm:text-xl" onClick={() => userInput('0')}>0</button>
-                        <button className="w-auto h-auto rounded-lg bg-white text-black text-2xl col-span-2 sm:text-xl" onClick={() => userInput('=')}>=</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('7')}>7</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('8')}>8</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('9')}>9</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('4')}>4</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('5')}>5</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('6')}>6</button>
+                        <button className="w-auto h-auto p-2 rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('1')}>1</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('2')}>2</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('3')}>3</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl sm:text-xl" onClick={() => userInput('0')}>0</button>
+                        <button className="w-auto h-auto rounded-lg bg-grayShade text-white text-2xl col-span-2 sm:text-xl" onClick={() => userInput('=')}>=</button>
                         </div>
                         <div className="grid grid-cols-1 grid-rows-4 gap-y-4 w-1/4 sm:gap-y-2">
-                        <button className="w-auto h-auto rounded-lg bg-sky-400 text-white text-2xl sm:text-xl" onClick={() => userInput('+')}>+</button>
-                        <button className="w-auto h-auto rounded-lg bg-sky-400 text-white text-2xl sm:text-xl" onClick={() => userInput('-')}>-</button>
-                        <button className="w-auto h-auto rounded-lg bg-sky-400 text-white text-2xl sm:text-xl" onClick={() => userInput('*')}>*</button>
-                        <button className="w-auto h-auto rounded-lg bg-sky-400 text-white text-2xl sm:text-xl" onClick={() => userInput('/')}>/</button>
+                        <button className="w-auto h-auto rounded-lg bg-orangeShade text-white text-2xl sm:text-xl" onClick={() => userInput('+')}>+</button>
+                        <button className="w-auto h-auto rounded-lg bg-orangeShade text-white text-2xl sm:text-xl" onClick={() => userInput('-')}>-</button>
+                        <button className="w-auto h-auto rounded-lg bg-orangeShade text-white text-2xl sm:text-xl" onClick={() => userInput('*')}>*</button>
+                        <button className="w-auto h-auto rounded-lg bg-orangeShade text-white text-2xl sm:text-xl" onClick={() => userInput('/')}>/</button>
                         </div>
                         </div>
                         </div>
                     </div>
                 </div>
+            </div>
     </div> );
 }
  

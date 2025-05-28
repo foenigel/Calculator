@@ -35,8 +35,8 @@ const Main = () => {
         });
     };
     
-    return ( <div className="relative bg-white-400 w-full h-full flex flex-col items-center justify-center">
-            <div className="relative  bg-gray-800 shadow-2xl shadow-black/50 overflow-hidden w-full h-full flex flex-col items-center justify-center sm:my-6 sm:rounded-3xl sm:border-4 sm:border-white sm:max-w-[400px]">
+    return ( <div className="relative bg-white-400 w-full h-full flex flex-col items-center justify-center sm:min-h-[500px]">
+            <div className="relative  bg-gray-800 shadow-2xl shadow-black/50 overflow-hidden w-full h-full flex flex-col items-center justify-center sm:my-6 sm:rounded-3xl sm:border-4 sm:border-white sm:max-w-[400px] ">
                 <div className="bg-black/15 w-full h-[20px] absolute top-0 flex items-center justify-end gap-2 p-5 sm:relative">
                     <BsReception4 size={19} color="#FFFFFF"/>
                     <BsWifi size={21} color="#FFFFFF"/>

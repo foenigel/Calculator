@@ -35,19 +35,19 @@ const Main = () => {
         });
     };
     
-    return ( <div className="relative bg-white w-full h-full flex flex-col items-center justify-center">
-            <div className="relative my-6 bg-gray-800 shadow-2xl shadow-black/50 rounded-3xl overflow-hidden w-full max-w-[450px] h-full flex flex-col items-center justify-center border-4 border-white">
-                <div className="bg-black/15 w-full h-[20px] flex items-center justify-end gap-2 p-5">
+    return ( <div className="relative bg-white-400 w-full h-full flex flex-col items-center justify-center">
+            <div className="relative  bg-gray-800 shadow-2xl shadow-black/50 overflow-hidden w-full h-full flex flex-col items-center justify-center sm:my-6 sm:rounded-3xl sm:border-4 sm:border-white sm:max-w-[400px]">
+                <div className="bg-black/15 w-full h-[20px] absolute top-0 flex items-center justify-end gap-2 p-5 sm:relative">
                     <BsReception4 size={19} color="#FFFFFF"/>
                     <BsWifi size={21} color="#FFFFFF"/>
                     <BsBatteryHalf size={22} color="#FFFFFF"/>
                 </div>
-                <div className="bg-gray-800 h-1/3 rounded-tl-2xl rounded-tr-2xl relative flex flex-col px-5 py-20 items-center justify-center w-full sm:py-10 ">
+                <div className="bg-gray-800 min-h-[100px] rounded-tl-2xl rounded-tr-2xl relative flex flex-col px-5 items-center justify-center w-full sm:py-10 sm:h-1/3">
                         <h4 className="text-sky-400 text-xs absolute mb-16 right-4 sm:mb-10">{equation}</h4>
                         <h1 className="flex text-white text-5xl font-semibold absolute right-4 sm:-mb-6">{inputValue}</h1>
                 </div>
-                <div className="relative h-2/3 w-full bg-gray-800/90 rounded-bl-2xl rounded-br-2xl py-8 px-9">
-                    <div className="relative text-base xl:gap-4 xl:text-2xl">
+                <div className="relative h-2/3 w-full bg-gray-800/90 rounded-bl-2xl min-h-fit rounded-br-2xl py-0 px-9 flex items-center justify-center sm:py-8">
+                    <div className="relative text-base xl:gap-4 xl:text-2xl w-full h-fit">
                         <div className="relative">
                         <div className="grid grid-cols-4 gap-x-2 mb-4 grid-rows-1 sm:mb-2">
                         <button className="w-auto h-auto rounded-lg p-2 bg-whiteShade text-black text-2xl sm:text-xl" onClick={() => userInput('C')}>C</button>
